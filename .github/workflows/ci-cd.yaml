@@ -10,13 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-      - run: export NVM_DIR="$HOME/.nvm"
-      - run: echo $HOME
-      - run: echo $NVM_DIR
-      - run: 'export PATH=$PATH:$NVM_DIR'
-      - run: nvm install 15
-      - run: nvm use 15
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 15
       - run: npm install
       - run: npm run lint
       - run: npm run prettier
