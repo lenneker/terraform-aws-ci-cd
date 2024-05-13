@@ -14,7 +14,7 @@ jobs:
       - run: export NVM_DIR="$HOME/.nvm"
       - run: echo $HOME
       - run: echo $NVM_DIR
-      - run: ' [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" '
+      - run: 'export PATH=$PATH:$NVM_DIR'
       - run: nvm install 15
       - run: nvm use 15
       - run: npm install
