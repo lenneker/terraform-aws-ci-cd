@@ -11,6 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+      - run: export NVM_DIR="$HOME/.nvm"
       - run: nvm install 15
       - run: nvm use 15
       - run: npm install
