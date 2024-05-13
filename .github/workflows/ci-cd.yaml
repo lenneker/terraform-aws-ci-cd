@@ -15,7 +15,6 @@ jobs:
       - run: echo $HOME
       - run: echo $NVM_DIR
       - run: ' [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" '
-      - run: ' [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" '
       - run: nvm install 15
       - run: nvm use 15
       - run: npm install
