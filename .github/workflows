@@ -1,0 +1,17 @@
+name: GitHub Actions Demo
+run-name: Feature Branch Test
+on: push
+  branches: feature
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+      - run: nvm install 15
+      - run: nvm use 15
+      - run: npm install
+      - run: npm run lint
+      - run: npm run prettier
+      - run: npm run test
+      - run: npm run build
